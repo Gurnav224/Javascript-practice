@@ -347,17 +347,193 @@ let ref =  reverseArray(arr)
 
 
 console.log(ref);
-*/
 
 function capitalizedarray(arr){
 
 let uppercase = arr.toString()
 
 return uppercase.toUpperCase()
-    
+
 }
 
 
 let arr = ['a','b','b','c']
 
 console.log(capitalizedarray(arr));
+
+
+function additem(item,item2){
+    let arr = []
+    arr.push(item,item2)
+
+    return arr;
+}
+
+console.log(additem(3,4));
+
+
+function removeItem(index,array){
+
+    let items =array;
+
+    items.splice(index,1)
+    
+    return items
+
+}
+
+
+let myArray = ['apple','banana','orange'];
+
+
+let newArray = removeItem(1,myArray);
+
+console.log(newArray);
+
+
+function sumOfNumbers(num){
+
+    let sum =0;
+
+    for(let i=0; i<=num; i++){
+        sum = sum+i;
+
+    }
+    return sum;
+
+}
+
+
+
+console.log(
+    sumOfNumbers(10)
+    
+    );
+    
+    
+   
+    function sumOfOdds(num){
+        let sum =0;
+
+        for(let i=0; i<=num; i++){
+            
+            if(i%2==1){
+                sum +=i;
+            }
+        }
+        return sum;
+    }
+
+
+    console.log(sumOfOdds(100));
+    
+    function sumOfEven(n){
+        let sum =0;
+
+        for(let i=0; i<=n; i++){
+            if(i%2==0){
+                sum +=i;
+            }
+        }
+
+        return sum;
+
+    }
+
+    console.log(sumOfEven(100));
+    
+    
+    function evenAndOdds(num){
+
+        let counteven =0;
+        let countodd =0;
+        for(let i=0; i<=num; i++){
+            if(i%2==0){
+
+             counteven++;
+            }
+           else{
+            countodd++;
+           }
+        }
+
+      return   {counteven,countodd};
+    }
+    
+    
+    console.log(evenAndOdds(100));
+    
+ console.log();
+ 
+ function evenAndOdds(n){
+     let evenCount =0;
+     let oddCount =0;
+
+     while(n>0){
+         let digit = n%10;
+         if(digit%2===0){
+            evenCount++;
+        }
+        else{
+            oddCount++;
+        }
+        n = Math.floor(n/10)
+    }
+    return {evenCount,oddCount}
+}
+
+
+let count = evenAndOdds(1234567890)
+
+
+console.log(count);
+
+let odd = count.oddCount
+let even = count.evenCount
+
+console.log(`The number of odds are ${odd}`);
+console.log(`The number of evens are ${even}`);
+
+
+function sum(){
+    let total = 0;
+
+    for(let i=0; i<arguments.length; i++){
+        total +=arguments[i];
+    }
+    return total;
+}
+
+console.log(sum(1,2,3,4));
+
+
+function randomUserIp(){
+    let octet1 = Math.floor(Math.random()*256)
+    let octet2 = Math.floor(Math.random()*256)
+    let octet3 = Math.floor(Math.random()*256)
+    let octet4 = Math.floor(Math.random()*256)
+
+    return `${octet1}.${octet2}.${octet3}.${octet4}`
+}
+
+console.log(randomUserIp());
+
+
+function randomMacAddress(){
+    const hexChars = '0123456789ABCDEF';
+    let macAddress = '';
+
+    for(let i=0; i<12; i++){
+        macAddress += hexChars[Math.floor(Math.random()*16)]
+
+        if(i%2==1 && i!==11){
+            macAddress += ':';
+        }
+    }
+
+    return macAddress;
+}
+
+
+console.log(randomMacAddress());
+*/
