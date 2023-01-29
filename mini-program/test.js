@@ -71,7 +71,7 @@ function generateColors(type, n) {
 
         let hexDigits = "0123456789ABCDEF";
         let randomHex = "";
-        for (var i = 0; i < 6; i++) {
+        for (let  i = 0; i < 6; i++) {
           randomHex += hexDigits.charAt(
             Math.floor(Math.random() * hexDigits.length)
           );

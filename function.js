@@ -774,4 +774,332 @@ let col2 = generateColors("rgb",2);
 console.log(col)
 
 console.log(col2);
+
+
+
+
+function generateColors(type,n){
+let rgb = '';
+let ArrOfCol = [];
+for(let i=1; i<=n; i++){
+    if(type ==="rgb"){
+
+
+
+                
+                let r = parseInt(Math.random()*256);
+                
+                let g = parseInt(Math.random()*256);
+                
+                let b = parseInt(Math.random()*256);
+                
+                rgb =  `rgb(${r},${g},${b})`;
+            
+            ArrOfCol.push(rgb);
+        }
+        
+        else if(type==="hexa"){
+            
+            let hexDigits = "123456789abcdef";
+            
+            let randomHex = ""
+            
+            for(let x=0; x<6; x++){
+                randomHex += hexDigits.charAt(Math.floor(Math.random()*hexDigits.length))
+            }
+            ArrOfCol.push("#"+randomHex)
+        }
+    }
+          
+    
+      
+    
+    
+    return ArrOfCol;
+}
+
+
+let rgbCol = generateColors("rgb",3);
+
+let hexCol = generateColors("hexa",3);
+
+console.log("rgb",rgbCol)
+
+console.log("hex",hexCol)
+
+
+function shuffleArray(array){
+
+    for(let i=array.length-1; i>0; i--){
+
+        var j= Math.floor(Math.random()*(i+1));
+        
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
+
+let arr = [1,6,7,8,9,2,3,4,5];
+
+shuffleArray(arr)
+
+console.log(arr)
+
+
+function shuffleArray(array){
+
+    
+    return array.sort(()=> Math.random()-0.5);
+}
+
+
+
+
+let arr = [1,2,3,4,5,6,7,8,9];
+shuffleArray(arr);
+
+console.log(arr);
+
+
+function factorial(num){
+    let fact =1;
+    for(let i=1; i<=num; i++){
+      fact = fact*i
+
+    }
+
+    return fact
+}
+
+let fac = factorial(5);
+
+console.log(fac);
+
+function isEmpty(arr){
+
+   
+    if(arr.length===0){
+        
+        console.log("Array is empty!");
+    }
+
+    return arr
+}
+
+
+let array = [1,2,3,4];
+
+
+
+console.log(isEmpty(array))
+
+function sum(){
+    var sum =0;
+    
+    for(let i=0; i<arguments.length; i++){
+        sum += arguments[i];
+    }
+    return sum;
+}
+
+console.log(sum(1,2,4,4));
+
+
+function sumOfArrayItems(array){
+
+    let sum =0;
+
+    
+    for(let i=0; i<array.length; i++){
+        sum += array[i];
+        if((typeof array[i])==='number'){
+
+
+            console.log( array[i] + " should be integer")
+        }
+        else{
+            console.log( array[i] + " should not be integer")
+
+            
+        }
+        
+    }
+
+    return sum;
+}
+
+
+
+let arr= [1,2,3,4,5,6,7,8,9, "abc"];
+
+
+console.log(sumOfArrayItems(arr))
+
+
+
+function modifyArray(array){
+
+
+    for(let i=1; i<array.length; i++){
+
+        if(array[i]===array[5]){
+            
+             
+            return array[i].toUpperCase();
+        }
+        
+        else if(array.length <5){
+            
+            return "item not found";
+        }
+
+    }
+    
+}
+
+let arr = ['Avocado', 'Tomato', 'Potato','Mango',"perer",'sfdlk']
+
+
+console.log(modifyArray(arr));
+
+
+function isPrime(num){
+    
+    if(num == 1){
+        return num + " is not prime";
+    }
+    else if(num === 2){
+
+        return num +  " is Prime ";
+    }
+    
+    else {
+        
+        for(let i=2; i<num; i++){
+            if(num%i===0){
+                return num + " is not  Prime"
+            }
+        }
+        
+        return  num + " is Prime "
+    }
+    
+}
+
+
+console.log(isPrime(11))
+console.log(isPrime(24))
+console.log(isPrime(19))
+console.log(isPrime(36))
+
+
+
+
+
+const allUnique = arr => arr.length === new Set(arr).size;
+
+console.log(allUnique([1,2,1,3,4]))
+
+
+function allUnique(arr){
+ let n = arr.length;
+ 
+ let s = new Set();
+ 
+ for(let i=0; i<n; i++){
+     s.add(arr[i]);
+ }
+
+ return (s.size === arr.length)
+}
+
+let arr = [1,2,4,2,5]
+
+
+if(allUnique(arr)){
+    console.log("All element are unique")
+}
+else{
+    console.log("not all element are unqiue")
+}
+
+
+
+
+function sameType(arr){
+    
+    let first = arr[0];
+
+    for(let i=1; i<arr.length; i++){
+        if(typeof arr[i] === typeof first)
+            return false;
+        
+        return true;
+    }
+}
+
+let arr = [1,2,5,6,8];
+
+if(sameType(arr)){
+    console.log("all elements are same")
+}
+else {
+    console.log("all element are not same")
+}
+
+
+function isValidVariable(str,n){
+    
+    if (!((str[0] >= 'a' && str[0] <= 'z')
+    || (str[0]>= 'A' && str[0] <= 'Z')
+    || str[0] == '_'))
+    return false;
+    
+    
+    for (let i = 1; i < str.length; i++)
+    {
+        if (!((str[i] >= 'a' && str[i] <= 'z')
+            || (str[i] >= 'A' && str[i] <= 'Z')
+            || (str[i] >= '0' && str[i] <= '9')
+            || str[i] == '_'))
+            return false;
+        }
+        
+        return true;
+}
+
+
+let str = 'IsValid';
+
+let n = str.length;
+
+
+if(isValidVariable(str,n)){
+    console.log("valid")
+}
+else {
+    console.log("is not valid")
+}
 */
+
+
+function sevenRandomNumbers(quantity,max){
+    let newArr = [];
+
+
+    while(newArr.length<quantity){
+        var randomNum = Math.floor(Math.random()*max)+1;
+        if(newArr.indexOf(randomNum)===-1) newArr.push(randomNum)
+    }
+
+return newArr
+
+
+}
+
+
+
+console.log(sevenRandomNumbers(7,9))
