@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random user id </title>
+</head>
+<body>
+   
+    <script>
+
+  var noOfChar = prompt("Enter number of char");
+  console.log(noOfChar);
+        
+  var noOfId = prompt("Enter number of Id");
+  console.log(noOfId);
+
+  function userIdGeneratedByUser(){
+    let text = ""
+    let char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for(let i=0; i<noOfId; i++){
+
+        
+        
+        for(let i=0; i<noOfChar; i++){
+            text += char.charAt(Math.floor(Math.random()*char.length).toString() ) 
+        }
+        text
+    }
+    return text
+  }
+
+ 
+
+  console.log( userIdGeneratedByUser())
+    </script>
+
+</body>
+</html>

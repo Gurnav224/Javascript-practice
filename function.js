@@ -536,4 +536,242 @@ function randomMacAddress(){
 
 
 console.log(randomMacAddress());
+
+
+
+function GenrateRandomHexColor(){
+
+    let Color = Math.floor(Math.random()*16777215).toString(16);
+    let BghexaColor = "#"+ Color;
+    console.log(BghexaColor);
+}
+
+GenrateRandomHexColor();
+
+function userIdGenerator(){
+    
+    let userId = Math.floor(Math.random()*1000000000).toString(16);
+    
+    console.log(userId)
+}
+
+userIdGenerator();
+
+
+function userIdGenerated(charlength){
+let text = "";
+let char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+for(let i=0; i<charlength; i++){
+    text += char.charAt(Math.floor(Math.random()*char.length))
+}
+
+console.log(text)
+}
+
+
+userIdGenerated(7)
+
+
+
+var noOfChar = 5
+console.log(noOfChar);
+
+var noOfId = 5
+console.log(noOfId);
+
+function userIdGeneratedByUser(){
+    let text = ""
+    let char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for(let i=0; i<noOfId; i++){
+      
+      
+      
+      for(let i=0; i<noOfChar; i++){
+          text += char.charAt(Math.floor(Math.random()*char.length).toString() ) 
+        }
+        
+    }
+    return text 
+}
+
+
+
+console.log( userIdGeneratedByUser())
+
+
+
+function rgbColorGenerator(){
+    let rgb1 = Math.floor(Math.random()*256);
+    let rgb2 = Math.floor(Math.random()*256);
+    let rgb3 = Math.floor(Math.random()*256);
+let rgb = `rgb(${rgb1},${rgb2},${rgb3})`;
+
+
+return rgb;
+
+}
+
+
+
+console.log(rgbColorGenerator())
+
+
+function arrayOfHexaColors(){
+
+    let hexColor = ['#FFF','#EEE','#CCC','#ece1','#000','#f1f1f1','#CCC','#e32e1','#0000','#f1f1f1'];
+
+    for(let i=0; i<Math.floor(Math.random()*hexColor.length); i++) {
+        
+        var randomHexFromArray =  hexColor[i]
+    }
+
+    
+    return randomHexFromArray;
+}
+
+console.log(arrayOfHexaColors())
+
+
+function arrayOfHexaColors(){
+
+    let hexCode = "123456789abcdef";
+    let loopCount = parseInt(Math.random()*50);
+    let hexColorArr = [];
+    
+    for(let i=0; i<=loopCount; i++){
+        let hexChar = [];
+        
+        for(let x=0; x<6; x++){
+
+            hexChar.push(hexCode[parseInt(Math.random()*hexCode.length)])
+        }
+
+        console.log(hexChar)
+        
+        hexColorArr.push('#'+hexChar.join(''));
+        
+        console.log(hexColorArr)
+    }
+    return hexColorArr;
+    
+}
+
+console.log(arrayOfHexaColors());
+
+
+function arrayOfRgbColors(){
+
+    let loopCount = parseInt(Math.random()*50);
+    let rgbArr = [] ;
+let rgb;
+    for(let i=1; i<=loopCount; i++){
+        
+        for(let x=0; x<3; x++ ){
+            
+            
+            let rgb1 = Math.floor(Math.random()*256)
+            let rgb2 = Math.floor(Math.random()*256)
+            let rgb3 = Math.floor(Math.random()*256);
+            
+            rgb  = `rgb(${rgb1},${rgb2},${rgb3})`;
+        }
+        // console.log( rgb)
+        
+        rgbArr.push(rgb)
+        
+        
+        
+    }
+    return rgbArr
+}
+
+
+console.log(arrayOfRgbColors());
+
+
+function hexToRgb(hex){
+
+    let r = parseInt(hex.slice(1,3),16);
+    let g = parseInt(hex.slice(3,5),16);
+    let b = parseInt(hex.slice(5,7),16);
+    
+    let rgb = `rgb(${r},${g},${b})`;
+
+    return rgb;
+}
+
+
+let hex = hexToRgb("#e223f3");
+
+console.log(hex);
+
+function hexValue(c){
+    let hex = c.toString(16);
+
+    return hex;
+}
+
+function convertRgbToHexa(r,g,b){
+ 
+    return "#" + hexValue(r) +hexValue(g) +hexValue(b)
+}
+
+console.log(convertRgbToHexa(28,135,201))
+
+function generateColors(type,n){
+
+    let colArr = [];
+    
+    if(type === "rgb"){
+
+        
+        let rgb = '';
+
+ 
+        for(let i=0; i<n; i++){
+            
+            for(let x =0; x<10; x++){
+                
+                
+                let r = parseInt(Math.random()*256);
+                let g = parseInt(Math.random()*256);
+                let b = parseInt(Math.random()*256);
+                
+                rgb = `rgb(${r},${b},${g})`;
+            }
+            colArr.push(rgb);
+        }
+    }
+    
+    else if(type === "hexa"){
+        let allhexCode = '123456789abcdef';
+        
+        for(let i=0; i<n; i++){
+            
+            let hexChar = [];
+            
+        for(let x=0; x<6; x++){
+           hexChar.push(allhexCode[parseInt(Math.random()*allhexCode.length)]);
+        }
+        
+        colArr.push("#"+hexChar.join(''));
+    }
+    
+}
+    else {
+        console.log("type should not equal to rgb or hexa")
+    }
+    
+    return colArr;
+}
+
+
+let col = generateColors("hexa",2);
+let col2 = generateColors("rgb",2);
+
+console.log(col)
+
+console.log(col2);
 */
