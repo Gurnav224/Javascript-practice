@@ -146,7 +146,6 @@ const minute = now.getMinutes();
 console.log(`${minute}:${hour} ${date}/${month}/${year}`)
 
 
-*/
 
 const date = new Date();
 
@@ -159,7 +158,25 @@ const year = date.getFullYear();
 const hour= date.getHours();
 
 const minute = date.getMinutes();
-
+f
 
 
 console.log(`${getDate}/${Month}/${year} ${hour}:${minute}`)
+*/
+
+const dog = {
+    name:"chilu",
+    legs:4,
+    age:6,
+    bark:function(){
+        return "woof woof";
+    }
+}
+
+dog.breed = "pitbull";
+
+dog.getDogInfo = function(){
+    return ` dog name is ${dog.name}dog is ${dog.age} year old`
+}
+
+console.log(dog)
