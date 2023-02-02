@@ -166,6 +166,7 @@ console.log(`${getDate}/${Month}/${year} ${hour}:${minute}`)
 const dog = {
     name:"chilu",
     legs:4,
+    color:"black",
     age:6,
     bark:function(){
         return "woof woof";
@@ -180,4 +181,189 @@ dog.getDogInfo = function(){
 
 console.log(dog)
 console.log(dog.getDogInfo())
-    */
+
+const personAccount = {
+    firstName:"Gurnav",
+    lastName:"Chaudhary",
+    Incomes:7000,
+    expense:5000,
+    totalIncome:function (){
+        return this.Incomes;
+    },
+    totalExpense:function(){
+        return this.expense;
+    },
+    accountInfo:function(){
+        return this.firstName + this.lastName;
+    }
+    
+}
+
+
+console.log(personAccount);
+
+console.log(personAccount.totalIncome());
+
+console.log(personAccount.totalExpense())
+
+console.log(personAccount.accountInfo())
+
+
+personAccount.addIncome = function(){
+    return 25000;
+}
+
+console.log(personAccount.addIncome())
+
+
+const users = {
+    Alex: {
+      email: 'alex@alex.com',
+      skills: ['HTML', 'CSS', 'JavaScript'],
+      age: 20,
+      isLoggedIn: false,
+      points: 30
+    },
+    Asab: {
+      email: 'asab@asab.com',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+      age: 25,
+      isLoggedIn: false,
+      points: 50
+    },
+    Brook: {
+        email: 'daniel@daniel.com',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+      age: 30,
+      isLoggedIn: true,
+      points: 50
+    },
+    Daniel: {
+      email: 'daniel@alex.com',
+      skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+      age: 20,
+      isLoggedIn: false,
+      points: 40
+    },
+    John: {
+      email: 'john@john.com',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+      age: 20,
+      isLoggedIn: true,
+      points: 50
+    },
+    Thomas: {
+      email: 'thomas@thomas.com',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+      age: 20,
+      isLoggedIn: false,
+      points: 40
+    }
+  };
+
+  users.gurnav = {
+    email:"chaudharyg856@gmail.com",
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+   }
+
+
+  const values  = Object.values(users);
+
+  
+  
+      
+
+
+
+      let count =0;
+      
+      
+      for(let i=0; i<values.length; i++){
+
+
+       if(values[i].isLoggedIn ===true ){
+           console.log(values[i]);
+           
+           
+           count = count+1;
+        }
+    }
+    console.log("Logged In user count",count)
+    
+    
+    
+    
+
+    let pointcount =0
+    for(let j=0; j<values.length; j++){
+        
+        if(values[j].points>=50){
+            console.log(values[j])
+            pointcount = pointcount+1;
+        }
+         
+    }
+    console.log("Points having greater than or equal to 50 ",pointcount)
+
+
+
+ 
+
+    
+    
+// console.log(users.name)
+
+
+
+const key = Object.keys(users);
+
+// console.log(key);
+
+const pror = Object.values(users);
+
+// console.log(pror);
+*/
+
+const library = [
+    {
+        serialNo:1001,
+        bookName:"eloquent javascript",
+        author:"not avalable",
+        pages:394,
+        available:true
+    },
+
+    {
+        serialNo:1002,
+        bookName:"you don't know js",
+        author:"not avalable",
+        pages:1344,
+        available:true
+    },
+
+    {
+        serialNo:1003,
+        bookName:"30dayofjavascript",
+        author:"not avalable",
+        pages:94,
+        available:true
+    },
+
+    {
+        serialNo:1004,
+        bookName:" javascript for everyone",
+        author:"not avalable",
+        pages:3994,
+        available:true
+    }
+]
+
+
+for(let i=0; i<library.length; i++){
+    console.log(library[i].bookName)
+}
+
+
