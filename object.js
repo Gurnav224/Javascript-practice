@@ -162,7 +162,6 @@ f
 
 
 console.log(`${getDate}/${Month}/${year} ${hour}:${minute}`)
-*/
 
 const dog = {
     name:"chilu",
@@ -180,3 +179,5 @@ dog.getDogInfo = function(){
 }
 
 console.log(dog)
+console.log(dog.getDogInfo())
+    */
