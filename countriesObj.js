@@ -2070,7 +2070,7 @@ const countries = [
 
 // console.log(languageSet);
 
-
+/*
 function mostSpokenLanguages(countries ,limit){
   let languageCount = {};
 
@@ -2096,3 +2096,33 @@ function mostSpokenLanguages(countries ,limit){
 
 
 console.log(mostSpokenLanguages(countries,10));
+
+*/
+
+function mostSpokenLanguages(countries,limit){
+ let languageCount = {}
+  for(let country of countries){
+    for(let language of country.languages){
+      if(languageCount[language]){
+        languageCount[language]++;
+      }
+      else{
+        languageCount[language] =1;
+      }
+    }
+  }
+
+  let sortedLanguages = Object.entries(languageCount)
+  .sort((a,b)=>b[1]-a[1])
+  .slice(0,limit)
+  .map(([language,count])=>({[language]:count}))
+
+  return sortedLanguages;
+}
+
+
+
+
+let call = mostSpokenLanguages(countries,5);
+
+console.log(call);
