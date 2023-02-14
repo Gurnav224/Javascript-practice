@@ -2050,9 +2050,49 @@ const countries = [
 // console.log(sortedLanguages);
 
 
-const tenMostPopulatedCountries = countries.sort((a,b)=>{
-    return b.population-a.population;
-}).slice(0,10);
+// const tenMostPopulatedCountries = countries.sort((a,b)=>{
+//     return b.population-a.population;
+// }).slice(0,10);
 
-console.log(tenMostPopulatedCountries);
+// console.log(tenMostPopulatedCountries);
 
+
+
+// const languageSet = new Set()
+
+// console.log(countries[0].languages);
+
+
+// for(let i=0; i<countries.length; i++){
+
+//   languageSet.add(countries[i].languages)
+// }
+
+// console.log(languageSet);
+
+
+function mostSpokenLanguages(countries ,limit){
+  let languageCount = {};
+
+  for(let country of countries){
+    for(let language of country.languages){
+      if(languageCount[language]){
+        languageCount[language]++;
+      }
+      else{
+        languageCount[language] =1;
+      }
+    }
+  }
+
+  let sortedLanguages = Object.entries(languageCount)
+  .sort((a,b)=>b[1]-a[1])
+  .map(([language,count]) => ({[language]:count})).slice(0,limit);
+
+
+  return sortedLanguages
+}
+
+
+
+console.log(mostSpokenLanguages(countries,10));
