@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1 class="title" id="first-title">First Title</h1>
+    <h1 class="title" id="second-title">Second Title</h1>
+    <h1 class="title" id="third-title">Third Title</h1>
+    <h1></h1>
+
+    <input type="text" id="mass" placeholder="mass In Kilogram" />
+    <input type="text" id="height" placeholder="Height in Meter" />
+
+    <button>Calculate BMI</button>
+</body>
+<script>
+    // getElementsByTagName()
+    /*
+    const allTitles = document.getElementsByTagName('h1');
+
+    console.log(allTitles.length);
+
+    for(let i=0; i<allTitles.length; i++){
+        console.log(allTitles[i]);
+    }
+    
+    //getElementByClassName()
+    
+    const allTitles = document.getElementsByClassName('title');
+    
+    console.log(allTitles.length);
+    
+    for(let i=0; i<allTitles.length; i++){
+        console.log(allTitles[i]);
+    }
+    
+    
+    // getElementById()
+    
+    let firstTitle = document.getElementById('first-title');
+    
+    console.log(firstTitle);
+    
+    
+    
+    let firstTitle = document.querySelector('h1');
+    let secondTitle = document.querySelector('.title');
+    let thirdTitle = document.querySelector('#first-title');
+    
+    console.log(firstTitle,secondTitle,thirdTitle);
+    
+    const allTitles = document.querySelectorAll('h1');
+
+    console.log(allTitles.length)
+    
+    for(let i=0; i<allTitles.length; i++){
+        // console.log(allTitles[i]);
+    }
+    
+    const all = allTitles.forEach(item =>  console.log(item))
+
+    
+console.log(all);
+
+
+// setAttribute
+
+const title = document.querySelectorAll('h1');
+
+
+title[3].setAttribute('class','title')
+title[3].setAttribute('id','fourth-title')
+
+title[3].classList.add('class','header-title')
+
+
+console.log(title[3]);
+
+
+// Adding Style 
+
+const titles = document.querySelectorAll('h1');
+
+
+
+titles.forEach((title,i)=>{
+    title.style.fontSize = '34px';
+    if(i%2===0){
+        title.style.color = 'green'
+    }
+    else{
+        title.style.color = 'red'
+    }
+})
+// createElement
+
+let elementOne = document.createElement('h2');
+
+let elementTwo = document.createElement('h2');
+
+console.log(elementOne,elementTwo);
+
+
+let elment;
+
+for(let i=1; i<5; i++){
+    elment = document.createElement('h1');
+    elment.innerText = `${i}. element`
+    elment.className = 'title'
+    document.body.appendChild(elment)
+}
+
+
+const button  = document.querySelector('button')
+
+button.addEventListener('click',e => {
+    console.log(e.target);
+})
+*/
+
+
+const mass = document.querySelector('#mass');
+const height = document.querySelector('#height');
+const button = document.querySelector('button');
+
+console.log(mass,height,button);
+
+button.addEventListener('click',()=>{
+    let bmi = mass.value*height.value;
+    console.log(bmi);
+})
+
+</script>
+</html>
